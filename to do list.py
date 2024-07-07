@@ -5,7 +5,7 @@ root.geometry("570x700")
 root.resizable(False,False)
 root.config(bg="orange")
 
-def add_task():
+def add_task(event=None):
     global messagebox
     task = task_entry.get()
     if task != "":
@@ -27,6 +27,7 @@ def clear_tasks():
 
 task_entry = Entry(root, width=30,bg="powder blue",font=("arial 25 bold"),bd=9,fg="black",)
 task_entry.pack(pady=20)
+task_entry.bind("<Return>", add_task)
 
 add =Button(root, text="Add Task", font=("arial 15 bold"),bd=9,fg="#fff",bg="#2a2d36",command=add_task)
 add.pack(pady=5)
